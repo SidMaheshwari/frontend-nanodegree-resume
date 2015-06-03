@@ -16,14 +16,19 @@ var education={
     ],
     "onlineCourses": [
         {
-            "title": "Intro to CSS and HTML",
-            "school": "Coursera",
-            "dates": "May 2015"
+            "title" : "Intro to CSS and HTML",
+            "school": "Udacity",
+            "dates" : "May 2015"
         },
         {
-        	"Title": "Intro to Javascript",
-            "school": "Coursera",
-            "Dates": "May 2015"
+        	"Title" : "Intro to Javascript",
+            "school": "Udacity",
+            "Dates" : "May 2015"
+        },
+        {
+        	"title"  : "Developing Android Apps",
+        	"school" : "Udacity",
+        	"Dates"  : "May 2015"
         }
     ]
 }    
@@ -52,7 +57,7 @@ var projects = {
 		{
 			"title" : "HTML website",
 			"dates" : "Summer 2017",
-			"description" : "Replicated website given by designer"
+			"description" : "Replicated website given by designer for Udacity Course"
 		}
 	]
 }
@@ -76,13 +81,16 @@ var work = {
 	]
 }
 
-for(skill in bio.skills)
-{	
-	$("#header").append(HTMLskillsStart);
-	var random = HTMLskills.replace("%data%",bio.skills[skill]);
-	$("#footerContacts").append(random);
+var diplayskills = function() {
+	for(skill in bio.skills)
+	{	
+		$("#header").append(HTMLskillsStart);
+		var random = HTMLskills.replace("%data%",bio.skills[skill]);
+		$("#skills").append(random);
 
+	}
 }
+diplayskills();
 
 var displayWork = function() {
 	for(job in work.jobs)
